@@ -14,3 +14,5 @@ pnpm i
 ```bash
 node original.js
 ```
+
+An ICS file will be created. Add to calendar of your choice. 

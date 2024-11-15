@@ -9,11 +9,12 @@ const METHOD = 2; // ISNA
 const SCHOOL = 1; // Hanafi = 1, Shafi = 0
 const YEAR = 2024;
 const MONTH = 11;
+const ANNUAL = false; // Set to true to get the entire year. Will ignore the month parameter
 
 // Fetch prayer times
 async function getPrayerTimes() {
   try {
-    const response = await axios.get(`https://api.aladhan.com/v1/calendarByCity/${YEAR}/${MONTH}?city=${CITY}&state=${STATE}&country=Canada&method=${METHOD}&school=${SCHOOL}`);
+    const response = await axios.get(`https://api.aladhan.com/v1/calendarByCity/${YEAR}/${MONTH}?city=${CITY}&state=${STATE}&country=Canada&method=${METHOD}&school=${SCHOOL}&annual=${ANNUAL}`);
     return response.data;
   } catch (error) {
     console.error("Error fetching prayer times:", error.message);

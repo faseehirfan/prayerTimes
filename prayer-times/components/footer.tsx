@@ -26,7 +26,7 @@ export function Footer(props: {
             >
               {props.builtBy}
             </a>
-            . The source code is available on{" "}
+            . Source code available on{" "}
             <a
               href={props.githubLink}
               target="_blank"

@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { LandingPageHeader } from "@/components/landing-page-header";
 
 export default function Layout(props: { children: React.ReactNode }) {
@@ -16,6 +17,12 @@ export default function Layout(props: { children: React.ReactNode }) {
         ]}
       />
       <main className="flex-1">{props.children}</main>
+      <Footer
+        builtBy="Faseeh Irfan"
+        builtByLink="https://faseehirfan.com/"
+        githubLink="https://github.com/faseehirfan/prayerTimes"
+        linkedinLink="linkedin.com/in/faseehirfan"
+      />
     </div>
   );
 }

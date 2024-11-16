@@ -1,4 +1,5 @@
 import { FeatureGrid } from "@/components/features";
+import { GetStarted } from "@/components/getstarted";
 import { Hero } from "@/components/hero";
 import { CalendarIcon, ClockIcon, Pencil2Icon } from "@radix-ui/react-icons";
 
@@ -53,6 +54,9 @@ export default async function IndexPage() {
           },
         ]}
       />
+
+      <div id="get-started" />
+      <GetStarted />
     </>
   );
 }

@@ -1,12 +1,10 @@
-// import { FeatureGrid } from "@/components/features";
+import { FeatureGrid } from "@/components/features";
 import { Hero } from "@/components/hero";
-// import { PricingGrid } from "@/components/pricing";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { ComponentIcon, Users } from "lucide-react";
+import { CalendarIcon, ClockIcon, Pencil2Icon } from "@radix-ui/react-icons";
 
 export default async function IndexPage() {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <>
       <Hero
         capsuleText="Free Forever"
         title="Your Prayers, On Time"
@@ -29,6 +27,32 @@ export default async function IndexPage() {
           </>
         }
       />
-    </div>
+
+      <div id="features" />
+      <FeatureGrid
+        title="Features"
+        subtitle="Tailor the perfect prayer schedule for your needs."
+        items={[
+          {
+            icon: <Pencil2Icon className="h-12 w-12" />,
+            title: "Full Flexibility",
+            description:
+              "Configure preferred calculation methods and Asr preference.",
+          },
+          {
+            icon: <ClockIcon className="h-12 w-12" />,
+            title: "Alarms & Event Durations",
+            description:
+              "Adjust alarm times and prayer event lengths to fit your schedule.",
+          },
+          {
+            icon: <CalendarIcon className="h-12 w-12" />,
+            title: "Seamless Calendar Integration",
+            description:
+              ".ics file sent directly to your email, ready to be added to your calendar.",
+          },
+        ]}
+      />
+    </>
   );
 }

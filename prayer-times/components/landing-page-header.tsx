@@ -9,21 +9,25 @@ import { Logo } from "./logo";
 import { Cross1Icon, HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { ThemeToggle } from "./theme-toggle";
 
-interface NavProps {
-  items?: {
-    title: string;
-    href: string;
-    disabled?: boolean;
-    external?: boolean;
-  }[];
+interface ItemsType {
+  title: string;
+  href: string;
+  disabled?: boolean;
+  external?: boolean;
 }
 
-function MobileItems(props: NavProps) {
+const items: ItemsType[] = [
+  { title: "Home", href: "/" },
+  { title: "Features", href: "/#features" },
+  { title: "Get Started", href: "/#get-started" },
+];
+
+function MobileItems() {
   return (
     <div className="fixed inset-0 top-16 z-50 grid h-[calc(100vh-4rem)] grid-flow-row auto-rows-max overflow-auto p-6 pb-32 animate-in slide-in-from-bottom-80 md:hidden">
       <div className="relative z-20 grid gap-6 rounded-md bg-popover p-4 text-popover-foreground shadow-md">
         <nav className="grid grid-flow-row auto-rows-max text-sm">
-          {props.items?.map((item, index) => (
+          {items.map((item, index) => (
             <Link
               key={index}
               href={item.disabled ? "#" : item.href}
@@ -43,12 +47,12 @@ function MobileItems(props: NavProps) {
   );
 }
 
-function DesktopItems(props: NavProps) {
+function DesktopItems() {
   const segment = useSelectedLayoutSegment();
 
   return (
     <nav className="hidden gap-6 md:flex">
-      {props.items?.map((item, index) => (
+      {items?.map((item, index) => (
         <Link
           key={index}
           href={item.disabled ? "#" : item.href}
@@ -69,7 +73,7 @@ function DesktopItems(props: NavProps) {
   );
 }
 
-export function LandingPageHeader(props: NavProps) {
+export function LandingPageHeader() {
   const [showMobileMenu, setShowMobileMenu] = React.useState<boolean>(false);
 
   return (
@@ -78,7 +82,7 @@ export function LandingPageHeader(props: NavProps) {
         <div className="flex items-center gap-4 md:gap-10">
           <Logo className="hidden md:flex" />
 
-          {props.items?.length ? <DesktopItems items={props.items} /> : null}
+          {items?.length ? <DesktopItems /> : null}
 
           <Button
             className="space-x-2 md:hidden"
@@ -95,7 +99,7 @@ export function LandingPageHeader(props: NavProps) {
 
           <Logo className="md:hidden" />
 
-          {showMobileMenu && props.items && <MobileItems items={props.items} />}
+          {showMobileMenu && <MobileItems />}
         </div>
 
         <div className="flex gap-4 items-center">

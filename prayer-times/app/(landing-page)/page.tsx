@@ -11,9 +11,9 @@ export default async function IndexPage() {
         title="Your Prayers, On Time"
         subtitle="Hassle-free scheduling for every salah, directly on your calendar."
         primaryCtaText="Get Started"
-        primaryCtaLink=""
-        secondaryCtaText="GitHub"
-        secondaryCtaLink="https://github.com/faseehirfan/prayerTimes"
+        primaryCtaLink="/#get-started"
+        secondaryCtaText="Learn More"
+        secondaryCtaLink="/#features"
         credits={
           <>
             Made by{" "}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +17,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <NextThemesProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          {children}
+        </NextThemesProvider>
+      </body>
     </html>
   );
 }

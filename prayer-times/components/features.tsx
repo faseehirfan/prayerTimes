@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function FeatureGridItem(props: {
   icon: React.ReactNode;
   title: string;
@@ -37,11 +39,23 @@ export function FeatureGrid(props: {
         </p>
       </div>
 
-      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-5xl md:grid-cols-3">
-        {props.items.map((item, index) => (
-          <FeatureGridItem key={index} {...item} />
-        ))}
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-4">
+        <div className="flex flex-col gap-4">
+          {props.items.map((item, index) => (
+            <FeatureGridItem key={index} {...item} />
+          ))}
+        </div>
+        <div className="relative">
+          <Image
+            src="/demo.png"
+            fill={true}
+            alt="Demo Calendar"
+            loading="lazy"
+          />
+        </div>
       </div>
+
+      <div className="flex justify-center "></div>
     </section>
   );
 }

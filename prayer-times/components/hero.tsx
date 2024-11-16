@@ -15,7 +15,7 @@ export function Hero(props: {
 }) {
   return (
     <section className="space-y-6 py-32 md:py-48 lg:py-52">
-      <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+      <div className="container mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
         {props.capsuleLink ? (
           <Link
             href={props.capsuleLink}

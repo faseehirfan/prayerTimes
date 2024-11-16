@@ -1,14 +1,22 @@
 import axios from "axios";
-import ical, { ICalAlarmType } from "ical-generator"; // Correct import for TypeScript
+import ical, { ICalAlarmType } from "ical-generator";
 import moment from "moment";
 import { Datatype } from "./types";
-import fs from "fs"; // For saving the file
+import fs from "fs";
+
+const CITY = "Surrey";
+const STATE = "BC";
+const METHOD = 2; // ISNA
+const SCHOOL = 1; // Hanafi = 1, Shafi = 0
+const YEAR = 2024;
+const MONTH = 11;
+const ANNUAL = false; // Set to true to get the entire year. Will ignore the month parameter
 
 // Fetch prayer times
 async function getPrayerTimes() {
   try {
     const response = await axios.get(
-      `https://api.aladhan.com/v1/calendarByCity/2024/11?city=Surrey&state=BC&country=Canada&method=2&school=1`
+      `https://api.aladhan.com/v1/calendarByCity/${YEAR}/${MONTH}?city=${CITY}&state=${STATE}&country=Canada&method=${METHOD}&school=${SCHOOL}&annual=${ANNUAL}`
     );
     return response.data as Record<string, Datatype>;
   } catch (error) {
@@ -80,4 +88,4 @@ async function generateICal({
 }
 
 // Run the function
-generateICal({ alarm: 5, duration: 30 }); // Example: 5-minute alarm, 30-minute duration
+generateICal({ alarm: 5 });

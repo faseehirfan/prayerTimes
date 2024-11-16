@@ -68,5 +68,5 @@ async function generateICal({ alarm = 0, duration = 25 } = {}) {
 }
 
 // Run the function
-generateICal({ alarm: 5, duration: 30 }); // Example: 5-minute alarm, 30-minute duration
+generateICal({ alarm: 5}); 
 

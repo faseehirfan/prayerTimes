@@ -181,8 +181,7 @@ export default function PrayerTimesForm() {
                     <div className="space-y-0.5">
                       <FormLabel className="text-base">Annual</FormLabel>
                       <FormDescription>
-                        Set to true to get the entire year. Will ignore the
-                        month parameter.
+                        Set to true to get the entire year.
                       </FormDescription>
                     </div>
                     <FormControl>

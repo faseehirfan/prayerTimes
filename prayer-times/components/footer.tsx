@@ -26,14 +26,14 @@ export function Footer(props: {
             >
               {props.builtBy}
             </a>
-            . Source code available on{" "}
+            .{" "}
             <a
               href={props.githubLink}
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              GitHub
+              Source Code
             </a>
             .
           </p>

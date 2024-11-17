@@ -56,7 +56,7 @@ export default function PrayerTimesForm() {
         <CardHeader>
           <CardTitle>Generate Your Prayer Calendar</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="px-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
@@ -125,7 +125,7 @@ export default function PrayerTimesForm() {
                       >
                         <FormControl>
                           <SelectTrigger>
-                            <SelectValue placeholder="Select a month." />
+                            <SelectValue placeholder="Select a month" />
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
